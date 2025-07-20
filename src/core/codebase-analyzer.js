@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import { IGNORE_PATTERNS, SUPPORTED_EXTENSIONS } from '../constants/constants.js';
+import { IGNORE_PATTERNS, SUPPORTED_EXTENSIONS } from '../constants/index.js';
 import { CodeFile } from './code-file.js';
 
 class CodebaseAnalyzer {
