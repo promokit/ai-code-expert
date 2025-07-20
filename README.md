@@ -18,27 +18,12 @@
    npm install
    ```
 
-3. **Configure environment variables:**
-   - Copy `.env.example` to `.env`:
-     ```sh
-     cp .env.example .env
-     ```
-   - Edit `.env` and set the required values for your environment.
-
-4. **Configure the codebase path:**
-   - Open your `.env` file and set the `CODEBASE_PATH` variable to the directory you want to analyze.
-   - Example:
-     ```
-     CODEBASE_PATH=/Users/yourname/projects/my
-     ```
-
-5. **Run the MCP server:**
+3. **Run the MCP server:**
    ```sh
    npm start
    ```
 
 The server will scan and index your codebase, then listen for MCP requests
-
 
 ## How It Works
 
@@ -145,3 +130,36 @@ The pattern recognition system extracts and organizes code metadata, enabling Cl
   ```ts
   const myFunc = (x: string): number => {}
   ```
+
+## Connecting to VS Code
+
+To connect the MCP server to VS Code:
+
+1. **Create and configure `mcp.json`:**
+   - In your project, create a `.vscode` folder if it doesn't exist.
+   - Inside `.vscode`, create a file named `mcp.json`.
+   - Configure it to point to your MCP server. Example:
+     ```json
+     {
+        "mcpServers": {
+            "codebase-expert": {
+                "command": "node",
+                "args": ["path/to/server.js"],
+                "env": {
+                    "CODEBASE_PATH": "path/to/codebase",
+                    "ALLOWED_DIRECTORIES": "path/to/codebase"
+                }
+            }
+        }
+    }
+     ```
+
+2. **List available MCP servers:**
+   - Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux) to open the Command Palette.
+   - Type `List MCP Servers` and select it.
+
+3. **Select and start your server:**
+   - Choose "codebase-expert" from the list.
+   - The server will start and connect to VS Code.
+
+You can now interact with the MCP server from within VS Code.
