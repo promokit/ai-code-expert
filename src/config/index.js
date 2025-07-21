@@ -1,8 +1,7 @@
-import defaultConfig from './default.js';
+import 'dotenv/config';
 
 const config = {
-  ...defaultConfig,
-  codebasePath: process.env.CODEBASE_PATH || defaultConfig.codebasePath,
+  codebasePath: process.env.CODEBASE_PATH,
 };
 
 export default config;

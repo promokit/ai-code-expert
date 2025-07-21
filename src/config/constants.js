@@ -26,6 +26,4 @@ const SUPPORTED_EXTENSIONS = {
     '.md': 'markdown',
 };
 
-const DEFAULT_CODEBASE_PATH = '/Users/metlonec/Work/promokit/infrastructure/www/html/demo/alysum/public';
-
-export { IGNORE_PATTERNS, SUPPORTED_EXTENSIONS, DEFAULT_CODEBASE_PATH }; 
+export { IGNORE_PATTERNS, SUPPORTED_EXTENSIONS }; 
